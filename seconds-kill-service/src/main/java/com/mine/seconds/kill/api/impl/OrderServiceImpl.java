@@ -9,18 +9,20 @@ import javax.annotation.Resource;
  * Function:
  *
  * @author crossoverJie
- *         Date: 01/05/2018 14:01
+ * Date: 01/05/2018 14:01
  * @since JDK 1.8
  */
 @Service
 public class OrderServiceImpl implements OrderService {
 
     @Resource(name = "DBOrderService")
-    private com.mine.seconds.kill.service.OrderService orderService ;
+    private com.mine.seconds.kill.service.OrderService orderService;
 
     @Override
     public int createWrongOrder(int sid) throws Exception {
-        return orderService.createWrongOrder(sid);
+        synchronized (orderService) {
+            return orderService.createWrongOrder(sid);
+        }
     }
 
     @Override
