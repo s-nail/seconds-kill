@@ -1,0 +1,38 @@
+dubbo:
+  application:
+    name: dubbo-provider
+  registry:
+    address: 127.0.0.1:2181
+    protocol: zookeeper
+    check: false
+  protocol:
+    name: dubbo
+    port: 30003
+    status: server
+  monitor:
+    protocol: registery
+  scan: com.mine.seconds.kill.api.impl
+  provider:
+    version: 1.0
+
+server:
+  port: 8061
+
+spring:
+  datasource:
+    username: root
+    password: root123
+    url: jdbc:mysql://192.168.37.36:3306/auth?characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  #type-aliases-package: com.example.entity
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
