@@ -6,7 +6,6 @@ import com.mine.seconds.kill.api.OrderService;
 import com.mine.seconds.kill.api.StockService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,11 +24,9 @@ public class IndexController {
 
     private Logger logger = LoggerFactory.getLogger(IndexController.class);
 
-    //@Autowired
     @Reference(version = "1.0")
     private StockService stockService;
 
-    //@Autowired
     @Reference(version = "1.0")
     private OrderService orderService;
 
@@ -111,7 +108,7 @@ public class IndexController {
     /**
      * 乐观锁更新库存 限流 库存改为查询 Redis 提高性能
      *
-     * @param sid
+     * @param sid 商品ID
      * @return
      */
     @SpringControllerLimit(errorCode = 200, errorMsg = "request has limited")

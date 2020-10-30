@@ -21,8 +21,8 @@ server:
 spring:
   datasource:
     username: root
-    password: root123
-    url: jdbc:mysql://192.168.37.36:3306/auth?characterEncoding=utf-8
+    password: r#dcenter9
+    url: jdbc:mysql://10.20.28.143:33061/seckill?characterEncoding=utf-8
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 

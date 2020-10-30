@@ -6,6 +6,7 @@ CREATE TABLE `stock` (
   `version` int(11) NOT NULL COMMENT '乐观锁，版本号',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
 CREATE TABLE `stock_order` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `sid` int(11) NOT NULL COMMENT '库存ID',
